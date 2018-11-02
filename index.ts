@@ -1,4 +1,5 @@
 import express from "express";
+import { config } from "configuration";
 
 const app = express();
 
@@ -8,5 +9,6 @@ app.get("/", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("started");
+  const works = config.works;
+  console.log("started", works);
 });
